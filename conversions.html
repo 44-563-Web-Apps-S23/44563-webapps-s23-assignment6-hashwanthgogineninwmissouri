@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Currency conversns
+    </title>
+</head>
+<html>
+    <body>
+        <h2>Hashwanth Gogineni shows currency conversions</h2>
+
+        <form>
+            <label for="frm_amt">Enter base amt</label>
+            <input type="number" id="frm_amt" name="frm_amt" value="50" /> <br />
+            <br />
+            <label for="frm_rate">Enter the conversn rate</label>
+            <input type="number" id="frm_rate" name="frm_rate" value="35" /> <br />
+            <br />
+            <input type="button" onclick="convert()" value="Show conversions" />
+        </form>
+
+        <p id="result">This text will be replaced</p>
+
+        <script>
+            
+            var toShow = "";
+            
+            function convert() 
+            {
+                amt = document.getElementById("frm_amt").value;
+                conversn = document.getElementById("frm_rate").value;
+                var conv = conversn;
+
+                output = document.getElementById("result");
+                
+                for (let i = 0; i < 5; i++) 
+                {
+                    conversn = amt * conv;
+                    
+                    var cn = conversn.toString();
+
+                    toShow = toShow + " " + amt + " is " + (cn.includes(".") == true ? Math.round(conversn * 100) / 100 : conversn) + ";";
+                    amt = amt * 2;
+                }
+                output.innerHTML = "conversions are: " + toShow;
+            }
+        </script>
+    </body>
+</html>
