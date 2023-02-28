@@ -24,6 +24,12 @@
 
 <p id="result">This text will be replaced </p>
 
+<div>
+
+  <img id="plnt_img" onclick="selectImage()" src="gladiolus.jpg" height= "100px" width="100px" alt="gladiolus Plant">
+
+</div>
+
 <script> 
     var good = 0
     var oops = 0
@@ -42,6 +48,28 @@
             oops=oops+1;
         }
         document.getElementById("result").innerHTML='Right count: '+good+'.<br>Wrong count:'+oops+'.';
+    }
+
+    let useImage=1;
+    
+    function selectImage()
+    {
+    
+        switch(useImage)
+        {
+        case 1:
+                document.getElementById("plnt_img").src="gladiolus.jpg";
+                useImage++;
+                break;
+        case 2:
+                document.getElementById("plnt_img").src="globeflower.jpg";
+                useImage++;
+                break;
+       case 3:
+                document.getElementById("plnt_img").src="oemleria.jpg";
+                useImage=1;
+                break;
+        }
     }
 </script>
 
